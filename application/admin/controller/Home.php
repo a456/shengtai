@@ -10,12 +10,11 @@
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
 
-class H extends Base
+class Home extends Base
 {
     // 文章列表
-    public function index()
+    public function index_carousel()
     {
-        echo 111;die;
         return $this->fetch();
     }
 }
