@@ -201,3 +201,15 @@ function getTree($pInfo, $spread = true)
 
     return $tree;
 }
+
+/**
+ *过滤所有的trim
+ *
+ */
+
+function filter_trim($data){
+    foreach($data as $k=>$v){
+        $data[$k] = trim($v);
+    }
+    return $data;
+}

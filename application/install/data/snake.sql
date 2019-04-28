@@ -35,6 +35,27 @@ CREATE TABLE `snake_articles` (
 -- ----------------------------
 INSERT INTO `snake_articles` VALUES ('2', '文章标题', '文章描述', '关键字1,关键字2,关键字3', '/upload/20170916/1e915c70dbb9d3e8a07bede7b64e4cff.png', '<p><img src=\"/upload/image/20170916/1505555254.png\" title=\"1505555254.png\" alt=\"QQ截图20170916174651.png\"/></p><p>测试文章内容</p><p>测试内容</p>', '2017-09-16 17:47:44');
 
+
+
+-- ----------------------------
+-- Table structure for snake_carousel_map
+-- ----------------------------
+DROP TABLE IF EXISTS `snake_carousel_map`;
+CREATE TABLE `snake_carousel_map` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `title` varchar(50) DEFAULT NULL COMMENT '轮播图标题',
+  `url` varchar(100) DEFAULT NULL COMMENT '图片地址',
+  `status` tinyint(1) DEFAULT '1' COMMENT '是否开启',
+  `sort` int(3) DEFAULT NULL COMMENT '排序',
+  `alt` varchar(50) DEFAULT NULL COMMENT '别名',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of snake_carousel_map
+-- ----------------------------
+
+
 -- ----------------------------
 -- Table structure for snake_node
 -- ----------------------------
@@ -121,3 +142,18 @@ CREATE TABLE `snake_user` (
 -- Records of snake_user
 -- ----------------------------
 INSERT INTO `snake_user` VALUES ('1', 'admin', 'a9ddd2e7bdff202e3e9bca32765e9ba0', '/static/admin/images/profile_small.jpg', '41', '127.0.0.1', '1505559479', 'admin', '1', '1');
+
+-- ----------------------------
+-- Table structure for snake_article_list
+-- ----------------------------
+DROP TABLE IF EXISTS `snake_article_list`;
+CREATE TABLE `snake_article_list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '车间展示',
+  `title` varchar(50) DEFAULT NULL COMMENT '标题',
+  `alt` varchar(255) DEFAULT NULL COMMENT '关键字',
+  `edit_time` int(10) DEFAULT '0' COMMENT '编辑时间',
+  `url` varchar(100) DEFAULT NULL COMMENT '图片',
+  `content` tinyint(1) DEFAULT '1' COMMENT '是否开启',
+  `type` tinyint(2) DEFAULT '1' COMMENT '1二手回收,2车间展示',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

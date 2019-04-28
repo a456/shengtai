@@ -21,11 +21,11 @@
         </div>
         <div class="ibox-content">
             <div class="form-group clearfix col-sm-1">
-                {if authCheck('articles/articleadd')}
-                <a href="{:url('articles/articleadd')}"><button class="btn btn-outline btn-primary" type="button">添加文章</button></a>
+                {if authCheck('home/carousel_add')}
+                    <a href="{:url('home/carousel_add')}"><button class="btn btn-outline btn-primary" type="button">添加文章</button></a>
                 {/if}
             </div>
-            <!--搜索框开始-->
+            <!--搜索框开始
             <form id='commentForm' role="form" method="post" class="form-inline pull-right">
                 <div class="content clearfix m-b">
                     <div class="form-group">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </form>
-            <!--搜索框结束-->
+            搜索框结束-->
 
             <div class="example-wrap">
                 <div class="example">
@@ -48,6 +48,7 @@
                         <th data-field="title">标题</th>
                         <th data-field="alt">关键字</th>
                         <th data-field="url">缩略图</th>
+                        <th data-field="status">是否开启</th>
                         <th data-field="operate">操作</th>
                         </thead>
                     </table>
@@ -119,7 +120,7 @@
     function articleDel(id){
         layer.confirm('确认删除此文章?', {icon: 3, title:'提示'}, function(index){
             //do something
-            $.getJSON("{:url('articles/articleDel')}", {'id' : id}, function(res){
+            $.getJSON("{:url('admin/del')}", {'id' : id,'table':'carousel_map'}, function(res){
                 if(1 == res.code){
                     layer.alert(res.msg, {title: '友情提示', icon: 1, closeBtn: 0}, function(){
                         initTable();
