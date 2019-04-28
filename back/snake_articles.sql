@@ -9,6 +9,6 @@ CREATE TABLE `snake_articles` (
   `content` text NOT NULL COMMENT '文章内容',
   `add_time` datetime NOT NULL COMMENT '发布时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-insert into `snake_articles`(`id`,`title`,`description`,`keywords`,`thumbnail`,`content`,`add_time`) values('2','文章标题','文章描述','关键字1,关键字2,关键字3','/upload/20170916/1e915c70dbb9d3e8a07bede7b64e4cff.png','<p><img src=\"/upload/image/20170916/1505555254.png\" title=\"1505555254.png\" alt=\"QQ截图20170916174651.png\"/></p><p>测试文章内容</p><p>测试内容</p>','2017-09-16 17:47:44');
+insert into `snake_articles`(`id`,`title`,`description`,`keywords`,`thumbnail`,`content`,`add_time`) values('4','啊啊啊','阿萨德','萨达','/upload/20190428/8c406356294f221dc046b29950830287.jpg','<p>撒大声地</p>','2019-04-28 14:50:03');
