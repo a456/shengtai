@@ -119,7 +119,7 @@ class AdminModel extends Model
         return [
             '编辑' => [
                 'auth' => $data['edit_url'],
-                'href' => url('home/carousel_edit', ['id' => $data['id']]),
+                'href' => url($data['edit_url'], ['id' => $data['id']]),
                 'btnStyle' => 'primary',
                 'icon' => 'fa fa-paste'
             ],

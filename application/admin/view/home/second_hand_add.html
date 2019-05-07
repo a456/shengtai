@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>添加轮播图</title>
+    <title>添加二手回收</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="__CSS__/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="__CSS__/font-awesome.min.css?v=4.4.0" rel="stylesheet">
@@ -18,24 +18,25 @@
         <div class="col-sm-10">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>添加轮播图</h5>
+                    <h5>添加二手回收文章</h5>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal m-t" id="commentForm" method="post" action="{:url('home/carousel_add')}">
+                    <form class="form-horizontal m-t" id="commentForm" method="post" action="{:url('home/second_hand_add')}">
+                        <input type="hidden" name="type" value="{$type}">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">轮播图标题：</label>
+                            <label class="col-sm-3 control-label">标题：</label>
                             <div class="input-group col-sm-7">
                                 <input id="title" type="text" class="form-control" name="title" required="" aria-required="true">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">轮播图关键词：</label>
+                            <label class="col-sm-3 control-label">关键词：</label>
                             <div class="input-group col-sm-7">
                                 <input id="alt" class="form-control" name="alt">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">轮播图缩略图：</label>
+                            <label class="col-sm-3 control-label">缩略图：</label>
                             <input name="url" id="url" type="hidden"/>
                             <div class="form-inline">
                                 <div class="input-group col-sm-2">
@@ -49,19 +50,20 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">轮播图排序：</label>
-                            <div class="input-group col-sm-7">
-                                <input id="sort" type="text" class="form-control" name="sort" required="" aria-required="true" onkeyup="this.value=this.value.replace(/\D/g,'')">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="col-sm-3 control-label">是否开启：</label>
                             <div class="input-group col-sm-7">
                                 是<input type="radio" name="status" value="1" title="是" checked>
                                 否<input type="radio" name="status" value="0" title="否">
                             </div>
-
                         </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">内容：</label>
+                            <div class="input-group col-sm-7">
+                                <script id="container" name="content" type="text/plain">
+                                </script>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-8">
                                 <!--<input type="button" value="提交" class="btn btn-primary" id="postform"/>-->

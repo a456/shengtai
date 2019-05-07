@@ -12,13 +12,13 @@ namespace app\admin\validate;
 
 use think\Validate;
 
-class HomeValidate extends Validate
+class SecondValidate extends Validate
 {
     protected $rule = [
         ['title', 'require', '标题不能为空'],
         ['alt', 'require', '关键词不能为空'],
         ['url', 'require', '缩略图不能空'],
-        ['sort', 'require', '排序不能为空']
+        ['content', 'require', '内容不能为空'],
     ];
 
 }
